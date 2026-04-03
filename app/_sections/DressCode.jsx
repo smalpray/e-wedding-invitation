@@ -262,7 +262,6 @@ export default function DressCode() {
         }
       `}</style>
 
-      {/* Pink blobs */}
       <div style={pinkBlob} />
       <div style={pinkBlobRight} />
 
@@ -272,7 +271,6 @@ export default function DressCode() {
       <FloralTop style={flowerTop} />
 
       <div style={pageContainer}>
-        {/* ── NINONG / NINANG SECTION ── */}
         <div className="dc-item dc-item-1 dc-heading-row mt-6 flex items-center justify-center gap-3 mb-12">
           <span className="font-great-vibes text-6xl text-[#DE3163]">
             attire
@@ -283,7 +281,6 @@ export default function DressCode() {
         </div>
 
         <div style={figureArea} className="dc-figure-area dc-item dc-item-2">
-          {/* Left: Ninong label + text */}
           <div style={sideBox} className="dc-side-left">
             <p style={sectionLabel} className="dc-section-label">
               NINONGS
@@ -298,7 +295,6 @@ export default function DressCode() {
             </div>
           </div>
 
-          {/* Center: both images */}
           <div style={centerImgBox} className="dc-center-imgs">
             <img
               src="/images/man_ninong.webp"
@@ -348,7 +344,6 @@ export default function DressCode() {
         </div>
 
         <div style={figureArea} className="dc-figure-area dc-item dc-item-4">
-          {/* Left: Men attire text */}
           <div style={sideBox} className="dc-side-left">
             <div style={attireText} className="dc-attire-text">
               GRAY OR TAUPE
@@ -361,7 +356,6 @@ export default function DressCode() {
             </div>
           </div>
 
-          {/* Center: both images */}
           <div style={centerImgBox} className="dc-center-imgs">
             <img
               src="/images/man_guest.webp"
@@ -376,8 +370,6 @@ export default function DressCode() {
               className="dc-img"
             />
           </div>
-
-          {/* Right: Women attire text */}
           <div style={sideBox} className="dc-side-right">
             <div style={attireText} className="dc-attire-text">
               LONG DRESS OR
@@ -411,7 +403,7 @@ export default function DressCode() {
         </div>
 
         <Divider />
-        <CenterImg/>
+        <CenterImg />
       </div>
     </div>
   );

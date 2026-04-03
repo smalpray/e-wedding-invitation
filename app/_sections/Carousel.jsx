@@ -113,14 +113,16 @@ export default function WeddingCarousel() {
     >
       <style>{css}</style>
 
-      {/* Stacked 3-card layout */}
       <div className="carousel-stack">
-        {/* Left card — behind, shifted left */}
         <div className="carousel-card carousel-card-left">
-          <img src={slides[prevIdx].src} alt="" className="carousel-card-img" draggable={false} />
+          <img
+            src={slides[prevIdx].src}
+            alt=""
+            className="carousel-card-img"
+            draggable={false}
+          />
         </div>
 
-        {/* Center card — front */}
         <div className="carousel-card carousel-card-center mb-8  ">
           <img
             key={animKey}
@@ -131,13 +133,16 @@ export default function WeddingCarousel() {
           />
         </div>
 
-        {/* Right card — behind, shifted right */}
         <div className="carousel-card carousel-card-right">
-          <img src={slides[nextIdx].src} alt="" className="carousel-card-img" draggable={false} />
+          <img
+            src={slides[nextIdx].src}
+            alt=""
+            className="carousel-card-img"
+            draggable={false}
+          />
         </div>
       </div>
 
-      {/* Dots */}
       <div style={styles.dots}>
         {slides.map((_, i) => (
           <button

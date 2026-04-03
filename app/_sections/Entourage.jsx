@@ -146,7 +146,6 @@ export default function Entourage() {
         className="relative overflow-x-hidden"
         style={{ background: "#fdf6f0" }}
       >
-        {/* Pink smoke blobs */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div
             className="blob-a absolute -top-20 -left-20 w-[500px] h-[500px] rounded-full opacity-40"
@@ -179,7 +178,6 @@ export default function Entourage() {
         </div>
 
         <section className="relative z-10 py-16 px-5 max-w-3xl mx-auto">
-          {/* Top divider floral */}
           <div
             ref={titleRef}
             className={`anim-fade-up ${titleVisible ? "visible" : ""}`}
@@ -199,7 +197,6 @@ export default function Entourage() {
 
           <div className="thin-divider mt-6" />
 
-          {/* Parents */}
           <Section delay={0.1}>
             <div className="flex justify-center gap-16 mt-4">
               <div className="text-center">
@@ -229,7 +226,6 @@ export default function Entourage() {
 
           <div className="thin-divider mt-8" />
 
-          {/* Principal Sponsors */}
           <Section delay={0.15}>
             <SectionTitle>Principal Sponsors</SectionTitle>
             <RoleLabel>To stand as witness to our vows</RoleLabel>
@@ -242,7 +238,6 @@ export default function Entourage() {
 
           <div className="thin-divider mt-8" />
 
-          {/* Best Man & Maid of Honor */}
           <Section delay={0.2}>
             <div className="flex justify-center gap-16 mt-2">
               <div className="text-center">
@@ -272,12 +267,10 @@ export default function Entourage() {
 
           <div className="thin-divider mt-8" />
 
-          {/* Secondary Sponsors */}
           <Section delay={0.25}>
             <SectionTitle>Secondary Sponsors</SectionTitle>
           </Section>
 
-          {/* Groomsmen & Bridesmaids */}
           <Section delay={0.3}>
             <div className="flex justify-center gap-16 mt-2">
               <div className="text-center">
@@ -307,10 +300,8 @@ export default function Entourage() {
 
           <div className="thin-divider mt-8" />
 
-          {/* Candle / Veil / Cord — 3 column */}
           <Section delay={0.35}>
             <div className="flex justify-between mt-6 gap-4 flex-wrap">
-              {/* Candle */}
               <div className="text-center flex-1 min-w-[140px]">
                 <RoleLabel>To light our path</RoleLabel>
                 {DATA.candleSponsors.map((n, i) => (
@@ -335,8 +326,6 @@ export default function Entourage() {
                   </p>
                 ))}
               </div>
-
-              {/* Veil */}
               <div className="text-center flex-1 min-w-[140px]">
                 <RoleLabel>To clothe us as one</RoleLabel>
                 {DATA.veilSponsors.map((n, i) => (
@@ -351,7 +340,6 @@ export default function Entourage() {
             </div>
           </Section>
 
-          {/* Bottom divider floral */}
           <Section delay={0.4}>
             <div className="mt-14">
               <Divider />

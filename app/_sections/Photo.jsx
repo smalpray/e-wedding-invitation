@@ -163,15 +163,11 @@ export default function Photo() {
         .lightbox-arrow.prev { left: 16px; }
         .lightbox-arrow.next { right: 16px; }
       `}</style>
-
-      {/* ── Page wrapper ── */}
       <div
         className="relative min-h-screen overflow-x-hidden"
         style={{ background: "#fdf6f0" }}
       >
-        {/* ── Pink smoke blobs ── */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          {/* Top-left */}
           <div
             className="blob-a absolute -top-20 -left-24 w-96 h-96 rounded-full opacity-30"
             style={{
@@ -179,7 +175,6 @@ export default function Photo() {
                 "radial-gradient(circle, #f9c4d2 0%, #f5a7be 40%, transparent 70%)",
             }}
           />
-          {/* Top-right */}
           <div
             className="blob-b absolute -top-10 -right-20 w-80 h-80 rounded-full opacity-25"
             style={{
@@ -187,7 +182,6 @@ export default function Photo() {
                 "radial-gradient(circle, #fbc8d8 0%, #f0a0bc 50%, transparent 70%)",
             }}
           />
-          {/* Mid-left */}
           <div
             className="blob-c absolute top-1/3 -left-16 w-72 h-72 rounded-full opacity-20"
             style={{
@@ -195,7 +189,6 @@ export default function Photo() {
                 "radial-gradient(circle, #fdd5e1 0%, #f5b8cc 50%, transparent 70%)",
             }}
           />
-          {/* Mid-right */}
           <div
             className="blob-a absolute top-1/2 -right-20 w-88 h-88 rounded-full opacity-20"
             style={{
@@ -203,7 +196,6 @@ export default function Photo() {
                 "radial-gradient(circle, #fac6d6 0%, #eda0bc 50%, transparent 70%)",
             }}
           />
-          {/* Bottom-left */}
           <div
             className="blob-b absolute bottom-0 -left-10 w-80 h-80 rounded-full opacity-25"
             style={{
@@ -211,7 +203,6 @@ export default function Photo() {
                 "radial-gradient(circle, #fbd0df 0%, #f4adc5 50%, transparent 70%)",
             }}
           />
-          {/* Bottom-right */}
           <div
             className="blob-c absolute -bottom-16 -right-16 w-96 h-96 rounded-full opacity-20"
             style={{
@@ -222,14 +213,13 @@ export default function Photo() {
         </div>
 
         <section className="relative z-10 py-10 sm:py-16 px-2 sm:px-5">
-          {/* Title */}
           <div
             ref={titleRef}
             className={`text-center mb-6 sm:mb-10 anim-fade-up ${titleVisible ? "visible" : ""}`}
           >
             <div className="mt-4 sm:mt-6 flex items-center justify-center gap-2 sm:gap-3">
               <span className="font-great-vibes text-4xl sm:text-6xl text-[#DE3163]">
-                the     
+                the
               </span>
               <span className="font-jost font-semibold text-4xl sm:text-6xl tracking-[0.2em] sm:tracking-[0.3em] text-[#DE3163] uppercase">
                 PRENUP
@@ -252,7 +242,6 @@ export default function Photo() {
             </div>
           )}
 
-          {/* Grid photos */}
           {grid.length > 0 && (
             <div className="grid grid-cols-2 gap-2 sm:gap-3 max-w-6xl mx-auto mt-2 sm:mt-3">
               {grid.map((photo, i) => {
@@ -279,7 +268,6 @@ export default function Photo() {
         </section>
       </div>
 
-      {/* Lightbox */}
       {lightbox && (
         <div className="lightbox-overlay" onClick={() => setLightbox(null)}>
           <button className="lightbox-close" onClick={() => setLightbox(null)}>

@@ -57,22 +57,22 @@ export default function Home({ opened = true }) {
   const [ready, setReady] = useState(false);
   const audioRef = useRef(null);
 
-  // Stagger the reveal: wait for ClickLoad to fade, then enable animations
   useEffect(() => {
     if (opened) {
       const t = setTimeout(() => setReady(true), 300);
       return () => clearTimeout(t);
     }
   }, [opened]);
-
-  // Auto-play music when invitation is opened (requires user gesture from ClickLoad button)
   useEffect(() => {
     if (opened && audioRef.current) {
-      audioRef.current.play().then(() => {
-        setPlaying(true);
-      }).catch(() => {
-        setPlaying(false);
-      });
+      audioRef.current
+        .play()
+        .then(() => {
+          setPlaying(true);
+        })
+        .catch(() => {
+          setPlaying(false);
+        });
     }
   }, [opened]);
 
@@ -82,7 +82,10 @@ export default function Home({ opened = true }) {
       audioRef.current.pause();
       setPlaying(false);
     } else {
-      audioRef.current.play().then(() => setPlaying(true)).catch(() => {});
+      audioRef.current
+        .play()
+        .then(() => setPlaying(true))
+        .catch(() => {});
     }
   };
 
@@ -314,8 +317,10 @@ export default function Home({ opened = true }) {
         }
       `}</style>
 
-      <div className="min-h-screen home-bg-texture relative" style={{ overflowX: 'clip' }}>
-        {/* Floating petals */}
+      <div
+        className="min-h-screen home-bg-texture relative"
+        style={{ overflowX: "clip" }}
+      >
         {ready && (
           <>
             {[...Array(12)].map((_, i) => (
@@ -323,55 +328,87 @@ export default function Home({ opened = true }) {
                 key={i}
                 className="petal"
                 style={{
-                  left: `${5 + (i * 8) % 90}%`,
+                  left: `${5 + ((i * 8) % 90)}%`,
                   animationDuration: `${8 + (i % 5) * 2}s, ${3 + (i % 3)}s`,
                   animationDelay: `${i * 1.2}s, ${i * 0.5}s`,
                   fontSize: `${10 + (i % 4) * 4}px`,
                 }}
               >
-                {i % 3 === 0 ? '🌸' : i % 3 === 1 ? '🩷' : '✿'}
+                {i % 3 === 0 ? "🌸" : i % 3 === 1 ? "🩷" : "✿"}
               </div>
             ))}
           </>
         )}
 
-        {/* Top-left floral corner */}
         <div className="floral-corner" style={{ top: 0, left: 0 }}>
           <svg width="180" height="180" viewBox="0 0 180 180" fill="none">
-            <path d="M0,0 Q40,60 20,120 Q60,80 120,100 Q80,40 0,0Z" fill="#de3163" fillOpacity="0.06" />
-            <path d="M0,30 Q30,70 10,110" stroke="#de3163" strokeOpacity="0.1" strokeWidth="1" fill="none" />
+            <path
+              d="M0,0 Q40,60 20,120 Q60,80 120,100 Q80,40 0,0Z"
+              fill="#de3163"
+              fillOpacity="0.06"
+            />
+            <path
+              d="M0,30 Q30,70 10,110"
+              stroke="#de3163"
+              strokeOpacity="0.1"
+              strokeWidth="1"
+              fill="none"
+            />
             <circle cx="35" cy="50" r="3" fill="#de3163" fillOpacity="0.1" />
             <circle cx="60" cy="80" r="2" fill="#de3163" fillOpacity="0.08" />
           </svg>
         </div>
 
-        {/* Top-right floral corner */}
-        <div className="floral-corner" style={{ top: 0, right: 0, transform: 'scaleX(-1)' }}>
+        <div
+          className="floral-corner"
+          style={{ top: 0, right: 0, transform: "scaleX(-1)" }}
+        >
           <svg width="180" height="180" viewBox="0 0 180 180" fill="none">
-            <path d="M0,0 Q40,60 20,120 Q60,80 120,100 Q80,40 0,0Z" fill="#de3163" fillOpacity="0.06" />
-            <path d="M0,30 Q30,70 10,110" stroke="#de3163" strokeOpacity="0.1" strokeWidth="1" fill="none" />
+            <path
+              d="M0,0 Q40,60 20,120 Q60,80 120,100 Q80,40 0,0Z"
+              fill="#de3163"
+              fillOpacity="0.06"
+            />
+            <path
+              d="M0,30 Q30,70 10,110"
+              stroke="#de3163"
+              strokeOpacity="0.1"
+              strokeWidth="1"
+              fill="none"
+            />
             <circle cx="35" cy="50" r="3" fill="#de3163" fillOpacity="0.1" />
             <circle cx="60" cy="80" r="2" fill="#de3163" fillOpacity="0.08" />
           </svg>
         </div>
 
-        {/* Bottom-left floral corner */}
-        <div className="floral-corner" style={{ bottom: 0, left: 0, transform: 'scaleY(-1)' }}>
+        <div
+          className="floral-corner"
+          style={{ bottom: 0, left: 0, transform: "scaleY(-1)" }}
+        >
           <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
-            <path d="M0,0 Q35,55 15,100 Q55,70 100,85 Q70,35 0,0Z" fill="#de3163" fillOpacity="0.05" />
+            <path
+              d="M0,0 Q35,55 15,100 Q55,70 100,85 Q70,35 0,0Z"
+              fill="#de3163"
+              fillOpacity="0.05"
+            />
             <circle cx="40" cy="55" r="2.5" fill="#de3163" fillOpacity="0.08" />
           </svg>
         </div>
 
-        {/* Bottom-right floral corner */}
-        <div className="floral-corner" style={{ bottom: 0, right: 0, transform: 'scale(-1)' }}>
+        <div
+          className="floral-corner"
+          style={{ bottom: 0, right: 0, transform: "scale(-1)" }}
+        >
           <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
-            <path d="M0,0 Q35,55 15,100 Q55,70 100,85 Q70,35 0,0Z" fill="#de3163" fillOpacity="0.05" />
+            <path
+              d="M0,0 Q35,55 15,100 Q55,70 100,85 Q70,35 0,0Z"
+              fill="#de3163"
+              fillOpacity="0.05"
+            />
             <circle cx="40" cy="55" r="2.5" fill="#de3163" fillOpacity="0.08" />
           </svg>
         </div>
 
-        {/* Floral sides */}
         <Side position="left" enabled={ready} />
         <Side position="right" enabled={ready} />
         <div
@@ -379,26 +416,28 @@ export default function Home({ opened = true }) {
           className={`flex flex-col items-center pt-8 px-5 anim-fade-down ${labelVisible ? "visible" : ""}`}
         ></div>
 
-        {/* Hero Photo - portrait style */}
         <div className="flex justify-center px-5">
           <div
             ref={photoRef}
             className={`photo-wrap w-full max-w-[520px] overflow-hidden relative anim-zoom ${photoVisible ? "visible" : ""}`}
-            style={{ aspectRatio: "3/4", willChange: "transform", backfaceVisibility: "hidden" }}
+            style={{
+              aspectRatio: "3/4",
+              willChange: "transform",
+              backfaceVisibility: "hidden",
+            }}
           >
             <img
               src={CONFIG.heroPhoto}
               alt={`${CONFIG.groomName} & ${CONFIG.brideName}`}
               className={`w-full h-full object-cover hero-ken-burns ${kenBurnsActive ? "active" : ""}`}
             />
-            {/* Gradient overlay for readability */}
             <div
               className="absolute inset-0"
               style={{
-                background: "linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 35%, transparent 50%, rgba(245,236,232,0.85) 100%)",
+                background:
+                  "linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 35%, transparent 50%, rgba(245,236,232,0.85) 100%)",
               }}
             />
-            {/* The Wedding of label */}
             <div
               className={`absolute top-[10%] inset-x-0 text-center anim-fade-down ${photoVisible ? "visible" : ""}`}
               style={{ transitionDelay: "0.3s" }}
@@ -410,7 +449,6 @@ export default function Home({ opened = true }) {
                 The Wedding of
               </p>
             </div>
-            {/* Names animate in after photo */}
             <div
               className={`absolute bottom-[6%] inset-x-0 text-center anim-fade-up ${photoVisible ? "visible" : ""}`}
               style={{ transitionDelay: "0.6s" }}
@@ -431,14 +469,17 @@ export default function Home({ opened = true }) {
         <Side position="left" enabled={ready} />
         <Side position="right" enabled={ready} />
 
-        {/* Ornamental divider after hero */}
         <div
           className={`ornament-line anim-expand ${dateVisible ? "visible" : ""}`}
         >
-          <span className="font-great-vibes text-[#9b2335] text-xl" style={{ opacity: 0.5 }}>♥</span>
+          <span
+            className="font-great-vibes text-[#9b2335] text-xl"
+            style={{ opacity: 0.5 }}
+          >
+            ♥
+          </span>
         </div>
 
-        {/* Date - staggered slide */}
         <div
           ref={dateRef}
           className={`flex items-center justify-center mt-8 stagger-children ${dateVisible ? "visible" : ""}`}
@@ -487,7 +528,6 @@ export default function Home({ opened = true }) {
           </div>
         </div>
 
-        {/* Floral divider - expand from center */}
         <div
           ref={dividerRef}
           className={`flex justify-center mt-8 anim-expand ${dividerVisible ? "visible" : ""}`}
@@ -495,7 +535,6 @@ export default function Home({ opened = true }) {
           <Divider />
         </div>
 
-        {/* Invite text - fade up */}
         <p
           ref={textRef}
           className={`font-cormorant italic text-base text-[#9b2335] text-center leading-relaxed max-w-md mx-auto px-10 mt-6 anim-fade-up ${textVisible ? "visible" : ""}`}
@@ -514,7 +553,6 @@ export default function Home({ opened = true }) {
           </button>
         </div>
 
-        {/* Hashtag - fade up */}
         <div
           ref={hashtagRef}
           className={`text-center mt-9 px-5 anim-fade-up ${hashtagVisible ? "visible" : ""}`}
@@ -531,15 +569,16 @@ export default function Home({ opened = true }) {
             {CONFIG.hashtag}
           </p>
         </div>
-
-        {/* Ornamental divider before countdown */}
         <div
           className={`ornament-line anim-expand ${hashtagVisible ? "visible" : ""}`}
         >
-          <span className="font-great-vibes text-[#9b2335] text-xl" style={{ opacity: 0.5 }}>♥</span>
+          <span
+            className="font-great-vibes text-[#9b2335] text-xl"
+            style={{ opacity: 0.5 }}
+          >
+            ♥
+          </span>
         </div>
-
-        {/* Countdown - zoom in with staggered boxes */}
         <div
           ref={countdownRef}
           className={`max-w-[720px] mx-auto mt-9 relative overflow-hidden anim-zoom ${countdownVisible ? "visible" : ""}`}
@@ -586,10 +625,13 @@ export default function Home({ opened = true }) {
 
         <div className="h-16" />
 
-        {/* Background music */}
-        <audio ref={audioRef} src="/mp3/Palagi - Tj Monterde  Violin Cover by BOJO (mp3cut.net).mp3" loop preload="auto" />
+        <audio
+          ref={audioRef}
+          src="/mp3/Palagi - Tj Monterde  Violin Cover by BOJO (mp3cut.net).mp3"
+          loop
+          preload="auto"
+        />
 
-        {/* Music button */}
         <button
           onClick={toggleMusic}
           className="fixed bottom-6 right-6 border border-[#9b2335] bg-[#fdf8f5] text-[#9b2335] font-jost font-light text-[10px] tracking-[0.15em] px-4 py-2 flex items-center gap-1.5 shadow-lg z-50"

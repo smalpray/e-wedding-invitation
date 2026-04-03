@@ -5,13 +5,12 @@ export default function ClickLoad({ onOpen, opened }) {
   const [leaving, setLeaving] = useState(false);
   const [gone, setGone] = useState(false);
 
-  // Lock body scroll while overlay is visible
   useEffect(() => {
     if (!gone) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     }
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [gone]);
 
@@ -96,7 +95,13 @@ export default function ClickLoad({ onOpen, opened }) {
 
       <div className={`click-load-wrapper ${leaving ? "leaving" : ""}`}>
         <p className="cl-title">
-          You<br />are<br />cordially<br />invited!
+          You
+          <br />
+          are
+          <br />
+          cordially
+          <br />
+          invited!
         </p>
         <button className="cl-btn" onClick={handleClick}>
           Open Invitation

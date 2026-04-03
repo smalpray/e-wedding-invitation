@@ -176,7 +176,6 @@ export default function FAQs() {
             </div>
           </div>
 
-          {/* Q1 — arrive time — text left, clock right */}
           <FaqRow
             question="What time should I arrive?"
             paragraphs={[
@@ -188,7 +187,6 @@ export default function FAQs() {
             delay={0.1}
           />
 
-          {/* Q2 — bring someone — rings left, text right */}
           <FaqRow
             question="Can I bring someone with me?"
             paragraphs={[
@@ -201,7 +199,6 @@ export default function FAQs() {
             delay={0.1}
           />
 
-          {/* Q3 — during ceremony — text left, no-camera right */}
           <FaqRow
             question="What happens during the ceremony?"
             paragraphs={[
@@ -218,7 +215,6 @@ export default function FAQs() {
             delay={0.1}
           />
 
-          {/* Q4 — after ceremony — champagne left, text right */}
           <FaqRow
             question="What happens after the ceremony?"
             paragraphs={[
@@ -231,7 +227,6 @@ export default function FAQs() {
             delay={0.1}
           />
 
-          {/* Q5 — when to leave — text left, coffee right */}
           <FaqRow
             question="When is the appropriate time to leave?"
             paragraphs={[
@@ -244,7 +239,6 @@ export default function FAQs() {
             delay={0.1}
           />
 
-          {/* Bottom divider */}
           <div
             ref={bottomRef}
             className={`mt-4 anim-fade-up ${bottomVisible ? "visible" : ""}`}
@@ -255,7 +249,6 @@ export default function FAQs() {
 
         <CenterImg2 />
 
-        {/* Reminders + Snap & Share */}
         <section className="w-full text-center py-12 sm:py-16 px-4">
           <h2
             className="text-4xl sm:text-5xl md:text-6xl text-[#DE3163] mb-3"
@@ -293,11 +286,10 @@ export default function FAQs() {
             className="text-[#1a1a1a] text-base sm:text-lg font-bold mb-5"
             style={{ fontFamily: "'Jost', sans-serif" }}
           >
-            #KennYouBeMineMitch
+            #DennisYouBeMineShiela
           </p>
         </section>
 
-        {/* Credit Bar */}
         <footer
           className="w-full py-3 px-4 flex items-center justify-center gap-3"
           style={{
@@ -308,7 +300,15 @@ export default function FAQs() {
             className="text-[#4a3a3a] text-[10px] sm:text-xs text-center"
             style={{ fontFamily: "'Jost', sans-serif", fontWeight: 300 }}
           >
-            Created by <span className="font-semibold">Wakin Dev</span>
+            Created by{" "}
+            <a
+              href="https://wakindev-psi.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold hover:underline"
+            >
+              Wakin Dev
+            </a>
           </p>
         </footer>
       </div>

@@ -15,11 +15,9 @@ export default function OverlayImage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Fade out as user scrolls down into this section
-  // Starts fading when section enters view, fully gone after 400px scroll
   const relativeScroll = Math.max(0, scrollY - offsetTop + 300);
   const opacity = Math.max(0, 1 - relativeScroll / 400);
-  const scale = 1 + relativeScroll * 0.0003; // very subtle zoom as it fades
+  const scale = 1 + relativeScroll * 0.0003;
 
   return (
     <>
@@ -56,7 +54,6 @@ export default function OverlayImage() {
         className="relative w-full flex flex-col items-center overflow-hidden"
         style={{ background: "#fdf6f0" }}
       >
-        {/* Main scrolling image */}
         <div
           className="overlay-image-wrap image-fade-edges w-full max-w-lg mx-auto relative z-0"
           style={{

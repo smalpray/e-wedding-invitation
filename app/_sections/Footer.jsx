@@ -7,12 +7,10 @@ export default function Footer() {
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Jost:wght@200;300;400;500&display=swap');
       `}</style>
 
-      {/* Reminders + Snap & Share Section */}
       <section
         className="w-full text-center py-12 sm:py-16 px-4"
         style={{ background: "#fdf6f0" }}
       >
-        {/* Reminders */}
         <h2
           className="text-4xl sm:text-5xl md:text-6xl text-[#DE3163] mb-3"
           style={{ fontFamily: "'Great Vibes', cursive" }}
@@ -27,7 +25,6 @@ export default function Footer() {
           FUN
         </p>
 
-        {/* Snap & Share */}
         <h2
           className="text-4xl sm:text-5xl md:text-6xl text-[#DE3163] mb-2"
           style={{ fontFamily: "'Great Vibes', cursive" }}
@@ -54,7 +51,6 @@ export default function Footer() {
         </p>
       </section>
 
-      {/* Bottom Credit Bar */}
       <footer
         className="w-full py-3 px-4 flex items-center justify-center gap-3"
         style={{

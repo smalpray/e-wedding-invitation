@@ -23,26 +23,27 @@ function useReveal(threshold = 0.12) {
 
 const CEREMONY = {
   label: "ceremony",
-  time: "02:00 in the afternoon",
-  venueName: "ST. JOSEPH THE WORKER PARISH",
-  venueAddress: "P.N. Roa Subdivision, Calaanan, Canitoan, Cagayan de Oro City",
+  time: "05:00 in the afternoon",
+  venueName: "Vista Villa Relaxing Highland Getaway",
+  venueAddress:
+    "Brgy. Kumaliskis, Don Salvador Benedicto (DSB), Negros Occidental, Philippines",
   venuePhoto:
-    " https://plus.unsplash.com/premium_photo-1768759486730-96082311f998?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://scontent.fceb1-2.fna.fbcdn.net/v/t39.30808-6/650193462_945650904640898_8456362873052117689_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=7b2446&_nc_ohc=pZZOPr8zFhcQ7kNvwFWNzi1&_nc_oc=AdqBGdeg-iJwoiVYcbfUfdV0FXlO7rWvxxc0vSgBJ8ITdyUMC66bOMluBZgi5lwzFpw&_nc_zt=23&_nc_ht=scontent.fceb1-2.fna&_nc_gid=76xMraCH35tZ7sRnUAlvLg&_nc_ss=7a389&oh=00_Af3l36rDvxrXmUdzGW1qNMc0xOsAYK8zmeiXCmIu3wUROA&oe=69D51A4F",
 
   qrCode: "/images/qrcode.png",
-  googleMapsUrl:
-    "https://maps.google.com/?q=St+Joseph+The+Worker+Parish+Cagayan+de+Oro",
+  googleMapsUrl: "https://maps.app.goo.gl/rpdgnDAZJBpLadaT9",
 };
 
 const RECEPTION = {
   label: "reception",
   time: "reception to follow at",
-  venueName: "Casa de Canitoan",
-  venueAddress: "Macapagal Dr, Cagayan de Oro City, Misamis Oriental",
+  venueName: "Vista Villa Relaxing Highland Getaway",
+  venueAddress:
+    "Brgy. Kumaliskis, Don Salvador Benedicto (DSB), Negros Occidental, Philippines",
   venuePhoto:
-    "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1400&q=80",
+    "https://scontent.fceb1-5.fna.fbcdn.net/v/t39.30808-6/487402249_676898464849478_5695219810450878630_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_ohc=2r8CLBkHgDIQ7kNvwHNkL2k&_nc_oc=AdoDzWaeheQe20xVEJ3bod7s3PZyeaVIkpcbB0j6f9kGTYI94JQScheLuiTYCGWggi4&_nc_zt=23&_nc_ht=scontent.fceb1-5.fna&_nc_gid=ZREMyAWYXK0bf2Dt0lALzw&_nc_ss=7a389&oh=00_Af3aSsO7dHXnVsZ95MgFzOm99OBSe1Ssj-92w4VxL_qgwg&oe=69D50DF4",
   qrCode: "/images/qrcode.png",
-  googleMapsUrl: "https://maps.google.com/?q=Casa+de+Canitoan+Cagayan+de+Oro",
+  googleMapsUrl: "https://maps.app.goo.gl/rpdgnDAZJBpLadaT9",
 };
 
 function VenueCard({ data, delay = 0 }) {
@@ -263,10 +264,8 @@ export default function Venue() {
             <div className="section-sep" />
           </div>
 
-          {/* Reception */}
           <VenueCard data={RECEPTION} delay={0.1} />
 
-          {/* Bottom divider */}
           <div
             ref={dividerBottomRef}
             className={`mt-14 anim-fade-up ${dividerBottomVisible ? "visible" : ""}`}

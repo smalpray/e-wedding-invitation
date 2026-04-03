@@ -19,43 +19,42 @@ export default function CenterImg2() {
           }}
         />
 
-        {/* Left fade */}
         <div
           className="absolute top-0 left-0 h-full pointer-events-none"
           style={{
             width: "25%",
-            background: "linear-gradient(to right, rgba(252,232,232,0.95), transparent)",
+            background:
+              "linear-gradient(to right, rgba(252,232,232,0.95), transparent)",
           }}
         />
 
-        {/* Right fade */}
         <div
           className="absolute top-0 right-0 h-full pointer-events-none"
           style={{
             width: "25%",
-            background: "linear-gradient(to left, rgba(252,232,232,0.95), transparent)",
+            background:
+              "linear-gradient(to left, rgba(252,232,232,0.95), transparent)",
           }}
         />
 
-        {/* Top fade — blends into page above */}
         <div
           className="absolute left-0 right-0 top-0 pointer-events-none"
           style={{
             height: "30%",
-            background: "linear-gradient(to bottom, rgba(252,232,232,0.85), transparent)",
+            background:
+              "linear-gradient(to bottom, rgba(252,232,232,0.85), transparent)",
           }}
         />
 
-        {/* Bottom fade — blends into page below */}
         <div
           className="absolute left-0 right-0 bottom-0 pointer-events-none"
           style={{
             height: "30%",
-            background: "linear-gradient(to top, rgba(252,232,232,0.85), transparent)",
+            background:
+              "linear-gradient(to top, rgba(252,232,232,0.85), transparent)",
           }}
         />
       </div>
-      
     </div>
   );
 }

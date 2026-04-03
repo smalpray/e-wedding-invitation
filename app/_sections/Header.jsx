@@ -33,7 +33,6 @@ export default function Header() {
     };
   }, [menuOpen]);
 
-  // Highlight active nav link based on scroll position
   useEffect(() => {
     const handleScroll = () => {
       const headerOffset = 100;
@@ -139,12 +138,10 @@ export default function Header() {
       `}</style>
 
       <header className="bg-[#fdf8f4] border-b border-[#b8956a]/20 relative overflow-visible z-50 sticky top-0">
-        {/* Top announcement bar */}
         <div className="bg-[#3a2e28] text-center py-1.5 font-jost font-extralight text-[11px] tracking-[0.25em] text-[#d4b896] uppercase">
           ♡ &nbsp; We're getting married &nbsp; ♡
         </div>
 
-        {/* Floral accents */}
         <svg
           className="absolute top-0 left-0 opacity-[0.07] pointer-events-none"
           width="120"
@@ -185,7 +182,6 @@ export default function Header() {
         </svg>
 
         <div className="max-w-6xl mx-auto px-6 md:px-10">
-          {/* ── DESKTOP NAV ── */}
           <nav className="hidden md:flex items-center justify-center border-t border-[#b8956a]/20 w-full flex-wrap">
             {navLinks.map((link, i) => (
               <React.Fragment key={link.label}>
@@ -214,14 +210,11 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* ── MOBILE TOP BAR ── */}
           <div className="md:hidden flex items-center justify-between py-3.5 border-t border-[#b8956a]/20">
-            {/* Active page label */}
             <span className="font-jost font-light text-[10.5px] tracking-[0.2em] uppercase text-[#b8956a]">
               {active}
             </span>
 
-            {/* Hamburger button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="flex flex-col gap-[5.5px] p-1 focus:outline-none z-[60] relative"
@@ -234,7 +227,6 @@ export default function Header() {
           </div>
         </div>
 
-        {/* ── MOBILE DRAWER ── */}
         <div
           className={`menu-overlay fixed inset-0 bg-[#3a2e28]/30 z-40 md:hidden ${menuOpen ? "open" : ""}`}
           onClick={() => setMenuOpen(false)}
@@ -251,7 +243,6 @@ export default function Header() {
             <div className="h-px w-8 bg-[#b8956a]/30" />
           </div>
 
-          {/* Links */}
           <nav>
             {navLinks.map((link) => (
               <a
@@ -270,8 +261,6 @@ export default function Header() {
               </a>
             ))}
           </nav>
-
-          {/* Decorative bottom */}
           <div className="mt-10 text-center">
             <p className="font-jost font-extralight text-[9px] tracking-[0.3em] uppercase text-[#b8956a]/50">
               ♡
