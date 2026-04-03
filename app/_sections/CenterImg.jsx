@@ -1,0 +1,61 @@
+"use client";
+import React from "react";
+
+export default function CenterImg() {
+  return (
+    <div className="w-full mt-10 sm:mt-12 flex justify-center">
+      <div
+        className="relative w-full sm:w-[70%] md:w-[60%]"
+        style={{ maxWidth: "960px" }}
+      >
+        <img
+          src="https://images.unsplash.com/photo-1769540241528-96929ed37e7c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Wedding couple"
+          className="w-full block object-cover"
+          style={{
+            aspectRatio: "3/2",
+            borderRadius: "0px",
+            boxShadow: "0 16px 56px rgba(0,0,0,0.18)",
+          }}
+        />
+
+        {/* Left fade */}
+        <div
+          className="absolute top-0 left-0 h-full pointer-events-none"
+          style={{
+            width: "25%",
+            background: "linear-gradient(to right, rgba(252,232,232,0.95), transparent)",
+          }}
+        />
+
+        {/* Right fade */}
+        <div
+          className="absolute top-0 right-0 h-full pointer-events-none"
+          style={{
+            width: "25%",
+            background: "linear-gradient(to left, rgba(252,232,232,0.95), transparent)",
+          }}
+        />
+
+        {/* Top fade — blends into page above */}
+        <div
+          className="absolute left-0 right-0 top-0 pointer-events-none"
+          style={{
+            height: "30%",
+            background: "linear-gradient(to bottom, rgba(252,232,232,0.85), transparent)",
+          }}
+        />
+
+        {/* Bottom fade — blends into page below */}
+        <div
+          className="absolute left-0 right-0 bottom-0 pointer-events-none"
+          style={{
+            height: "30%",
+            background: "linear-gradient(to top, rgba(252,232,232,0.85), transparent)",
+          }}
+        />
+      </div>
+      
+    </div>
+  );
+}
