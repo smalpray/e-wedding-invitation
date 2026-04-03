@@ -5,17 +5,16 @@ import Side from "./Side";
 
 // ✏️ EDIT THESE
 const CONFIG = {
-  groomName: "Dennis",
-  brideName: "Shiela",
+  groomName: "Wakin",
+  brideName: "Jaja",
   day: "Wensday",
   month: "May",
   date: 20,
   year: 2026,
   time: "05:00 PM",
-  hashtag: "#DennisAndShiela",
+  hashtag: "#WakinAndJaja",
   weddingDateISO: "2026-05-20T17:00:00",
-  heroPhoto:
-    "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800&q=80",
+  heroPhoto: "/images/Apr 3, 2026, 04_49_35 PM.png",
   countdownBg:
     "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80",
 };
@@ -321,7 +320,7 @@ export default function Home({ opened = true }) {
         className="min-h-screen home-bg-texture relative"
         style={{ overflowX: "clip" }}
       >
-        {ready && (
+        {/* {ready && (
           <>
             {[...Array(12)].map((_, i) => (
               <div
@@ -337,6 +336,34 @@ export default function Home({ opened = true }) {
                 {i % 3 === 0 ? "🌸" : i % 3 === 1 ? "🩷" : "✿"}
               </div>
             ))}
+          </>
+        )} */}
+        {ready && (
+          <>
+            {[...Array(12)].map((_, i) => {
+              const images = ["/images/8.png"];
+
+              return (
+                <div
+                  key={i}
+                  className="petal"
+                  style={{
+                    left: `${5 + ((i * 8) % 90)}%`,
+                    animationDuration: `${8 + (i % 5) * 2}s, ${3 + (i % 3)}s`,
+                    animationDelay: `${i * 1.2}s, ${i * 0.5}s`,
+                  }}
+                >
+                  <img
+                    src={images[i % images.length]}
+                    alt="petal"
+                    style={{
+                      width: `${50 + (i % 4) * 5}px`,
+                      height: "auto",
+                    }}
+                  />
+                </div>
+              );
+            })}
           </>
         )}
 

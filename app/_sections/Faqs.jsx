@@ -127,7 +127,6 @@ export default function FAQs() {
         className="relative overflow-x-hidden"
         style={{ background: "#fdf6f0" }}
       >
-        {/* Smoke blobs */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div
             className="blob-a absolute -top-20 -left-20 w-64 sm:w-[480px] h-64 sm:h-[480px] rounded-full opacity-40"
@@ -160,7 +159,7 @@ export default function FAQs() {
         </div>
 
         <section className="relative z-10 py-10 sm:py-16 px-4 sm:px-8 max-w-4xl mx-auto">
-          {/* Title */}
+          
           <div
             ref={titleRef}
             className={`text-center mb-8 sm:mb-12 anim-fade-up ${titleVisible ? "visible" : ""}`}

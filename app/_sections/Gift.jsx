@@ -223,7 +223,6 @@ export default function Gift() {
           </p>
 
           <div className="gift-cards gap-8">
-            {/* InstaPay Card */}
             <div className="gift-card gift-animate-card">
               <img
                 src="/images/gcash-qr.jpg"
@@ -232,7 +231,6 @@ export default function Gift() {
               />
             </div>
 
-            {/* BPI Card */}
             <div className="gift-card gift-animate-card">
               <img
                 src="/images/gcash-qr.jpg"

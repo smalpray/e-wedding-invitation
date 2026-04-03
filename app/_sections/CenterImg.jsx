@@ -19,7 +19,6 @@ export default function CenterImg() {
           }}
         />
 
-        {/* Left fade */}
         <div
           className="absolute top-0 left-0 h-full pointer-events-none"
           style={{
@@ -27,8 +26,6 @@ export default function CenterImg() {
             background: "linear-gradient(to right, rgba(252,232,232,0.95), transparent)",
           }}
         />
-
-        {/* Right fade */}
         <div
           className="absolute top-0 right-0 h-full pointer-events-none"
           style={{
@@ -37,7 +34,6 @@ export default function CenterImg() {
           }}
         />
 
-        {/* Top fade — blends into page above */}
         <div
           className="absolute left-0 right-0 top-0 pointer-events-none"
           style={{
@@ -46,7 +42,6 @@ export default function CenterImg() {
           }}
         />
 
-        {/* Bottom fade — blends into page below */}
         <div
           className="absolute left-0 right-0 bottom-0 pointer-events-none"
           style={{
